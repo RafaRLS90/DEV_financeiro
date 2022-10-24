@@ -47,7 +47,10 @@
         <section>
             <h2 class="sr-only">Transações</h2>
             
-            <a href="#" class="buttton new">+ Nova transação</a>
+            <a 
+            onclick="Modal.open()"
+            href="#" 
+            class="button new">+ Nova transação</a>
             
             <table id="data-table">
                 <thead>
@@ -90,7 +93,7 @@
     
     </main>
 
-    <div class="modal-overlay active">
+    <div class="modal-overlay">
         <div class="modal">
          <div id="form">
                 <h2>Nova transação</h2>
@@ -103,8 +106,9 @@
                         type="text" 
                         id="description"
                         name="description"
-                        placeholder="Descrição">
+                        placeholder="Descrição"/>
                     </div>
+                   
                     <div class="input-group">
                         <label
                         class="input-group"
@@ -114,8 +118,28 @@
                         step="0.01"
                         id="amount"
                         name="amount"
-                        placeholder="Descrição">
+                        placeholder="0,00"
+                        />
+                        <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
                     </div>
+                        <div class="input-group">
+                        <label
+                        class="input-group"
+                        for="date">Data</label>
+                        <input 
+                        type="date" 
+                        id="date"
+                        name="date"
+                        />
+                    </div>
+                    
+                    <div class="input-group actions">
+                        <a 
+                        onclick="Modal.close()"
+                        href="a" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+                    
                 </form>
          </div>
         </div>
@@ -124,6 +148,30 @@
     <footer class="container">
         <p>Dev.financeiro$</p>
     </footer>
+
+<script>
+    const Modal = {
+        open(){
+            //Abrir modal
+            //Adicionar a class active ao modal
+            document
+            .querySelector('modal-overlay')
+            .classList
+            .add('active')
+
+        },
+        close(){
+            // fechar modal
+            //remover a class active do modal
+            document
+            .querySelector('modal-overlay')
+            .classList
+            .remove('active')
+
+        }
+    }
+
+</script>
 </body>
 
 </html>

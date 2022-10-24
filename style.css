@@ -1,5 +1,8 @@
 :root {
     --dark-blue: #363f5f;
+    --green-pd: #49aa26;
+    --light-green: #3dd705;
+    --red-blod: #e92929;
 }
 
 /* é um seletor universal*/
@@ -49,6 +52,40 @@ a:hover{
     display: inline-block;
     margin-bottom: .8rem;
 }
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: var(--green-pd) ;
+    padding: 0;
+    border-radius: 0.25rem;
+
+    cursor: pointer;
+
+}
+
+button:hover {
+    background: var(--light-green);
+}
+
+.button.cancel{
+    color: var(--red-blod);
+    border: 2px var(--red-blod) solid;
+    border-radius: 0..25rem;
+
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
+
 
 h2 {
     margin-top: 3.2rem ;
@@ -186,7 +223,7 @@ table tbody tr:hover {
     visibility: hidden;
 }
 
-.modal-overlay.actve {
+.modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
@@ -194,7 +231,43 @@ table tbody tr:hover {
 .modal {
     background: #f0f2f5;
     padding: 2.4rem;
-    
+    width: 90%;
+    max-width: 500px;
+}
+
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group samll {
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
 }
 
 footer{
