@@ -20,13 +20,13 @@ const Modal = {
 }
 
 const transactions = [{
-    id: 1,
+    id: 0,
     description: 'Luz',
     amount: -50000,
     date: '23/01/2022',
 },
 {
-    id: 2,
+    id: 1,
     description: 'Website',
     amount: 500000,
     date: '25/01/2022',
@@ -55,17 +55,27 @@ const Transaction = {
 //colocar no html
 
 const DOM = {
-    innerHTMLTransaction() {
+    addTransaction(transaction, index){
+        console.log(transaction)
+        const tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+    
+    console.log(tr.innerHTML)
+    
+    },
+    innerHTMLTransaction(transaction) {
 
         const html = `  
-<tr>
-    <td class="description">Luz</td>
-    <td class="expense">- R$ 500,00</td>
-    <td class="date">23/01/2022</td>
+
+    <td class="description">${transaction.description}</td>
+    <td class="expense">${transaction.amount}</td>
+    <td class="date">${transaction.date}</td>
     <td>
     <img src="./assets/assets/minus.svg" alt="Remover transação">
     </td>
-</tr>`
-
+`
+            return html
     }
 }
+
+DOM.addTransaction(transactions[0])
