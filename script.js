@@ -46,13 +46,41 @@ id: 4,
 
 
 const Transaction = {
+    all: transactions,
+   
+    add(transaction){
+        Transaction.all.push(transaction)
+
+        App.reload()
+    },
+    
     incomes() {
+        let income = 0;
         // somar as entradas
+        // pegar todas as transações
+        Transaction.all.forEach(transaction => {//se for maior que zero
+            if( transaction.amount > 0) {
+                //somar a uma variavel, e retornar a variavel
+                income += transaction.amount;
+            }
+        })
+        return income;
     },
     expense() {
+        let expense = 0;
+        // somar as entradas
+        // pegar todas as transações
+        Transaction.all.forEach(transaction => {//se for menor que zero
+            if( transaction.amount < 0) {
+                //somar a uma variavel, e retornar a variavel
+                expense += transaction.amount;
+            }
+        })
+        return expense
         //somar as saídas
     },
     total() {
+        return Transaction.incomes() + Transaction.expense();
         //entradas - saídas
     }
 }
@@ -94,15 +122,17 @@ const DOM = {
     
     document
     .getElementById('incomeDisplay')
-    .innerHTML = "Soma das entradas"
+    .innerHTML = Utils.formatCurrency(Transaction.incomes())
     document
     .getElementById('expenseDisplay')
-    .innerHTML = "Soma das saídas"
+    .innerHTML = Utils.formatCurrency(Transaction.expense())
     document
     .getElementById('totalDisplay')
-    .innerHTML = "Total"
+    .innerHTML = Utils.formatCurrency(Transaction.total())
 
-    }
+    },
+
+    clearTransactions
 }
 
 const Utils = {
@@ -122,8 +152,26 @@ const Utils = {
     }
 }
 
-transactions.forEach(function(transaction){
-    DOM.addTransaction(transaction)
-})
+//aplicação faça novamente de tudo// add inteligência ao formulário
+const App = {
+    init() {
+        Transaction.all.forEach(transaction => {
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()
+        
+      },
+    reload() {
+        App.init()
+    },
+}
 
-DOM.updateBalance()
+App.init()
+
+Transaction.add({
+    id: 39,
+    description: 'Alo',
+    amount: 200,
+    date: '23/02/2022'
+})
