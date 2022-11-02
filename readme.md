@@ -67,3 +67,10 @@ te deixar por dentro de tudo.
 		[] Nem só de classes ou ID's
 	### Para acompanhar a próxima aula
 	* [] O guia estelar de JavaScript
+
+
+# Aplicativo em funcionamento
+
+### Como segue na imagem, o aplicativo DEV_Financeiro trás a opção do Programador inserir e ter controle de suas entradas e saídas
+
+![App funcionando](./assets/assets/app_fuincionando.png)
