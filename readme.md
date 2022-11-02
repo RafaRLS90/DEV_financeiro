@@ -88,3 +88,9 @@ te deixar por dentro de tudo.
 ### Ainda na opção formulário, a pessoa não conseguirá concluir sem digitar todos os itens necessários, recebendo mensagem de aviso alertando que terá de preencher todos os itens.
 
 ![Alerta](./assets/assets/preencha%20os%20campos.png)
+
+#### Por fim, podemos remover as transações através do botão de remoção em cor vermelha, conforme imagem abaixo
+
+![Remove](./assets/assets/remover.png)
+
+# Meus agradecimentos ao pessoal do Potência Tech e equipe RocketSeat!!!!!
