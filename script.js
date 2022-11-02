@@ -19,32 +19,21 @@ const Modal = {
     }
 }
 
+const Storage = {
+    get(){
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) ||
+        []
+    },
+
+    set(transactions) {
+        localStorage.setItem("", JSON.
+        stringify(transactions))
+    }
+}
+
+
 const Transaction = {
-    all: [
-        {
-    
-        description: 'Luz',
-        amount: -50000,
-        date: '23/01/2022',
-    },
-    {
-        
-        description: 'Website',
-        amount: 500000,
-        date: '25/01/2022',
-    },
-    {
-        
-        description: 'Internet',
-        amount: -20000,
-        date: '14/02/2022',
-    },
-    {
-    
-        description: 'App',
-        amount: 200000,
-        date: '14/02/2022',
-    }],
+    all: Storage.get(),
    
     add(transaction){
         Transaction.all.push(transaction)
@@ -171,6 +160,7 @@ const Utils = {
     }
 }
 
+
 const Form = {
     description: document.querySelector('input#description'),
     amount: document.querySelector('input#amount'),
@@ -247,6 +237,9 @@ const Form = {
         
     }
 }
+
+
+
 //aplicação faça novamente de tudo// add inteligência ao formulário
 const App = {
     init() {
@@ -254,6 +247,8 @@ const App = {
         Transaction.all.forEach(DOM.addTransaction)
         
         DOM.updateBalance()
+
+        Storage.set(Transaction.all)
         
       },
     reload() {
