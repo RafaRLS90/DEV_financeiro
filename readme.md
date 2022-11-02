@@ -74,3 +74,17 @@ te deixar por dentro de tudo.
 ### Como segue na imagem, o aplicativo DEV_Financeiro trás a opção do Programador inserir e ter controle de suas entradas e saídas
 
 ![App funcionando](./assets/assets/app_fuincionando.png)
+
+#### Com a opção de nova transação, podemos incluir uma nova conta, um novo trabalho que somará ao nosso capital
+
+![Formulário](./assets/assets/formulario.png)
+
+#### Veremos nas opções de entrada, saída e total
+
+![Descrições](./assets/assets/entradas.png)
+![Descrições](./assets/assets/saidas.png)
+![Descrições](./assets/assets/total.png)
+
+### Ainda na opção formulário, a pessoa não conseguirá concluir sem digitar todos os itens necessários, recebendo mensagem de aviso alertando que terá de preencher todos os itens.
+
+![Alerta](./assets/assets/preencha%20os%20campos.png)
