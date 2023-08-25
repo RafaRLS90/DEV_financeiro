@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "DEV_financeiro",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DEV_financeiro"
+	}
+}
